@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  </head>
+  <body>
+    <table id="app">
+      <tr>
+        <td>Masukkan angka 1</td>
+        <td>
+          <div id="angka1">
+            <input type="number" v-model:value="angka1" />
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>Masukkan angka 2</td>
+        <td>
+          <div id="angka2">
+            <input type="number" v-model:value="angka2" />
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Hasil bagi angka1 % angka2 adalah</p>
+        </td>
+        <td>{{hasil}}</td>
+        <td>
+          <input type="button" v-on:click="klik()" value="Hitung hasil bagi" />
+        </td>
+      </tr>
+    </table>
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data: {
+          hasil: "...",
+          angka1: "masukkan angka",
+          angka2: "masukkan angka",
+          klik() {
+            this.hasil = this.angka1 % this.angka2;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

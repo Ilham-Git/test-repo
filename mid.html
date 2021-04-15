@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+  <head>
+    <title>Pengantar Teknologi Informasi</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <style>
+      .title {
+        text-align: center;
+        font-size: 30px;
+        font-weight: bold;
+      }
+      p {
+        font-size: 30px;
+      }
+      .gambar {
+        height: 400px;
+        width: 400px;
+        border-radius: 10%;
+        float: left;
+        margin-right: 50px;
+      }
+      button {
+        border: 1px dotted grey;
+        border-radius: 20%;
+        width: 100px;
+        height: 30px;
+        background-color: rgba(0, 255, 255, 0.123);
+        margin-left: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="title">Pengantar Teknologi Informasi</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum esse doloribus nemo quod cumque dolor est delectus vitae vel quae magnam earum atque, consequuntur architecto tenetur, molestiae eaque officia nostrum.</p>
+    <img class="gambar" src="https://penerbitbukudeepublish.com/wp-content/uploads/2018/01/Pengantar-Teknologi-Informasi-depan1.jpg" />
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum esse doloribus nemo quod cumque dolor est delectus vitae vel quae magnam earum atque, consequuntur architecto tenetur, molestiae eaque officia nostrum.</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum esse doloribus nemo quod cumque dolor est delectus vitae vel quae magnam earum atque, consequuntur architecto tenetur, molestiae eaque officia nostrum.</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum esse doloribus nemo quod cumque dolor est delectus vitae vel quae magnam earum atque, consequuntur architecto tenetur, molestiae eaque officia nostrum.</p>
+    <button>Click me</button>
+    <table id="app">
+        <tr>
+            <td>First Name</td>
+            <div class="First">
+                <td><input type="text" id="pertama"></td>
+            </div>
+        </tr>
+        <tr>
+            <td>Last Name</td>
+            <div class="Last">
+                <td><input type="text" id="kedua"></td>
+            </div>
+        </tr>
+        <tr>
+            <td><input type="button" value="Tukar" v-on:click = "rubah()"></td>
+        </tr>
+    </table>
+    <script>
+        var app = new Vue({
+        el: "#app",
+        data: {
+            First: " ",
+            Last: " ",
+          rubah(){
+              var wadah = document.getElementById("pertama").value;
+              document.getElementById("pertama").value = document.getElementById("kedua").value;
+              document.getElementById("kedua").value = wadah;
+          }
+        },
+      });
+    </script>
+  </body>
+</html>
